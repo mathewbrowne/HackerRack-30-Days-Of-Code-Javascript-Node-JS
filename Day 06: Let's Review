@@ -1,0 +1,13 @@
+function processData(input) {
+    //Enter your code here
+    var todo = (input.split("\n"));
+    const T = todo[0];
+    
+    for(let i=1; i<=T; i++){
+        const array = [...todo[i]];
+        const odds = array.filter((element, index) => index % 2 == 0);
+        const evens = array.filter((element, index) => index % 2 == 1);
+        console.log(odds.join('')+' '+evens.join(''));
+    }
+    
+} 
