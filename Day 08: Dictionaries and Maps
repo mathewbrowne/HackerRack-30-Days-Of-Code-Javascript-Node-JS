@@ -1,0 +1,24 @@
+function processData(input) {
+    //Enter your code here
+    input = input.split('\n');
+    const N = parseInt(input[0]);
+
+    var phonebook = [];
+    
+    for (var i = 0; i<N; i++){
+        var this_string = input[i+1];
+        var entry = this_string.split(' ');
+        phonebook[entry[0]] = entry[1];
+    }
+
+    for (var j = N+1; j < input.length; j++ ){
+        var query = (phonebook[input[j]]);
+        
+        if (query !== undefined){
+            console.log(input[j] + '=' + query)
+        } else {
+            console.log('Not found')
+        }
+    }
+    
+} 
