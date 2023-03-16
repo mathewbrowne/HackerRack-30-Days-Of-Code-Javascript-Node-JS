@@ -1,0 +1,22 @@
+function main() {
+    const n = parseInt(readLine().trim(), 10);
+    const binary = n.toString(2);
+    
+    var ones = 0;
+    var maximum_consecutive_ones = 0;
+
+    for (let i = 0; i < binary.length; i++) {       
+        if (binary[i] === "1") {
+            ones = ones + 1;
+            // check if the new max is greater than the existing one
+            if (ones > maximum_consecutive_ones){
+                maximum_consecutive_ones = ones;
+            }
+        }
+        else if (binary[i] === "0") {
+            //reset the counter;
+            ones = 0;
+        }          
+    }   
+    console.log(maximum_consecutive_ones);
+}
