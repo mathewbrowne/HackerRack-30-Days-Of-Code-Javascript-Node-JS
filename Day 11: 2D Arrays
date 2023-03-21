@@ -1,0 +1,22 @@
+function main() {
+
+    let arr = Array(6);
+
+    for (let i = 0; i < 6; i++) {
+        arr[i] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+    }
+    
+    var array_of_sums = [];
+    
+    for(let x = 0; x < arr.length-2; x++){
+        for(let y = 0; y < arr.length-2; y++){
+            var sum_line_1 = arr[x][y] + arr[x][y+1] + arr[x][y+2];
+            var sum_line_2 = arr[x+1][y+1];
+            var sum_line_3 = arr[x+2][y] + arr[x+2][y+1] + arr[x+2][y+2];
+            var sum = sum_line_1 + sum_line_2 + sum_line_3;
+            array_of_sums.push(sum);
+        }
+    }
+    
+    console.log(Math.max(...array_of_sums));
+}
