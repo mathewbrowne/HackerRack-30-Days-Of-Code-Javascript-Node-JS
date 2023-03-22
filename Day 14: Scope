@@ -1,0 +1,24 @@
+function readLine(): string {
+    return inputLines[currentLine++];
+}
+
+function main() {
+    // Enter your code here
+    const N = readLine();
+    const arr = readLine().split(" ").map( Number );
+    let diff = new Difference(arr);
+    diff.calculate();
+}
+
+class Difference{
+    elements: Array<number>;
+    constructor(elements: Array<number>) {
+        this.elements = elements;
+    }
+    calculate(){
+        const max = Math.max(...this.elements);
+        const min = Math.min(...this.elements);
+        let diff = max-min;
+        console.log(diff);
+    }
+}
